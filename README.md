@@ -37,6 +37,7 @@ By automating the data pipeline, the project aims to achieve real-time news data
 - **Google Cloud Storage (GCS)**: To store news data in Parquet format.
 - **Python**: To write the ETL script for fetching, processing, and storing data.
 - **Snowflake**: To load the processed data and store it in an efficient, scalable database.
+- **Pandas**: Structures and processes raw news data into a DataFrame for storage.
 - **NewsAPI**: To fetch news data from the News API.
 
 ---
