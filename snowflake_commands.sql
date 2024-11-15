@@ -11,7 +11,7 @@ ENABLED = TRUE
 STORAGE_ALLOWED_LOCATIONS = ('gcs://snowflake_projects/news_data_analysis/parquet_files/')
 ;
 
-DESC INTEGRATION news_data_gcs_integration;
+DESC INTEGRATION news_data_gcs_integration; # To get the service account details, which will help later in establishing a stage 
 
 CREATE OR REPLACE STAGE gcs_raw_data_stage
 URL = 'gcs://snowflake_projects/news_data_analysis/parquet_files/'
