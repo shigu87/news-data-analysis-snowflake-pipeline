@@ -1,1 +1,1 @@
-# news-data-analysis-snowflake-pipeline
+# News-data-analysis-snowflake-pipeline
