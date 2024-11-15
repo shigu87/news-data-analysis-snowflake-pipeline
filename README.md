@@ -60,10 +60,6 @@ Orchestrates the entire pipeline:
 - **Defines the storage integration** and external stage.
 - **Executes `COPY INTO` command** to load data from GCS to Snowflake.
 
-## Running the Project Locally
-- Follow the prerequisites to set up your environment.
-- Trigger the Airflow DAG through the UI or CLI.
-
 ---
 
 ## **Challenges Faced**
