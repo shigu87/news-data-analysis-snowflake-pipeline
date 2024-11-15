@@ -71,5 +71,3 @@ def fetch_news_data():
     destination_blob_name = f'news_data_analysis/parquet_files/{filename}'
     upload_to_gcs(bucket_name, destination_blob_name, filename)
 
-    # Remove local file after upload
-    os.remove(filename)
