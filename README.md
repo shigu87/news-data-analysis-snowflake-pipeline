@@ -32,10 +32,37 @@ By automating the data pipeline, the project aims to achieve real-time news data
 The project consists of the following steps:
 
 1. **Fetching News Data**: The NewsAPI is queried to fetch news data based on predefined parameters (e.g., keyword "apple", date range, language).
-2. **Data Transformation and Storage**: The raw data is transformed into a structured DataFrame using Pandas. The data is then stored as Parquet files locally.
-3. **Upload to Google Cloud Storage (GCS)**: The local Parquet files are uploaded to a specific Google Cloud Storage bucket for further processing.
-4. **Incremental Data Load to Snowflake**: Using Apache Airflow, the data is loaded from Google Cloud Storage into Snowflake via an external stage. The data is then transformed and stored in the `news_api_data` table for analysis.
-5. **Event-driven Workflow**: Airflow DAGs are set up to ensure that the process runs on a daily schedule and handles failures gracefully.
+   - Sign up at [newsapi.org](https://newsapi.org) and get an API key.
+3. **Data Transformation and Storage**: The raw data is transformed into a structured DataFrame using Pandas. The data is then stored as Parquet files locally.
+4. **Upload to Google Cloud Storage (GCS)**: The local Parquet files are uploaded to a specific Google Cloud Storage bucket for further processing.
+   - `snowflake_projects` in this case
+6. **Incremental Data Load to Snowflake**: Using Apache Airflow, the data is loaded from Google Cloud Storage into Snowflake via an external stage. The data is then transformed and stored in the `news_api_data` table for analysis.
+   - Place the `airflow_job.py` and `fetch_news.py` scripts in the DAGs folder.
+   - Configure a connection in Airflow for Snowflake (`snowflake_conn_id`).
+8. **Event-driven Workflow**: Airflow DAGs are set up to ensure that the process runs on a daily schedule and handles failures gracefully.
+   - Trigger the `newsapi_to_gcs` DAG from the Airflow UI.
+
+---
+### Code Explanation
+
+#### `airflow_job.py`
+Orchestrates the entire pipeline:
+- **`PythonOperator`** runs `fetch_news_data` from `fetch_news.py`.
+- **`SnowflakeOperator`** executes SQL to create the table and copy data from GCS.
+
+#### `fetch_news.py`
+- **Fetches news data** from NewsAPI, parses it, and saves it as a Parquet file.
+- **Uploads the file** to the specified GCS bucket.
+- **Deletes the local file** after upload to save space.
+
+#### `snowflake_commands.sql`
+- **Creates Snowflake database** and table schema.
+- **Defines the storage integration** and external stage.
+- **Executes `COPY INTO` command** to load data from GCS to Snowflake.
+
+## Running the Project Locally
+- Follow the prerequisites to set up your environment.
+- Trigger the Airflow DAG through the UI or CLI.
 
 ---
 
