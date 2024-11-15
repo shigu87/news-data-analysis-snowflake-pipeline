@@ -1,6 +1,6 @@
 # News-data-analysis-snowflake-pipeline
 
-Problem Statement
+# Problem Statement
 In the world of news media and content aggregation, there is a constant need to collect, analyze, and store large volumes of news data in an efficient manner. Traditional methods of handling news data often involve batch processing, which can lead to delays in making data available for real-time analysis. Additionally, managing these data streams effectively and storing them in a structured and scalable manner is a critical challenge for any organization aiming to derive meaningful insights from real-time events.
 
 The goal of this project is to streamline the collection and storage of news data by building an automated and event-driven pipeline that extracts data from a news API (NewsAPI), stores it in Google Cloud Storage (GCS) in Parquet format, and then loads it incrementally into Snowflake for analysis.
