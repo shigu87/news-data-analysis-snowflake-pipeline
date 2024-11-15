@@ -1,5 +1,18 @@
 # News Data Analysis with Snowflake Pipeline
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Project Workflow](#project-workflow)
+- [Setup Instructions](#setup-instructions)
+- [Challenges Faced](#challenges-faced)
+- [Outcome](#outcome)
+- [Real-World Usefulness](#real-world-usefulness)
+- [Future Improvements](#future-improvements)
+
+---
+
 ## **Problem Statement**
 In the world of news media and content aggregation, there is a constant need to collect, analyze, and store large volumes of news data in an efficient manner. Traditional methods of handling news data often involve batch processing, which can lead to delays in making data available for real-time analysis. Additionally, managing these data streams effectively and storing them in a structured and scalable manner is a critical challenge for any organization aiming to derive meaningful insights from real-time events.
 
