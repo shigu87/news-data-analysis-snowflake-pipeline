@@ -137,18 +137,3 @@ In the real world, this solution can be applied to a variety of use cases:
 
 ---
 
-news-data-analysis-snowflake-pipeline/
-│
-├── dags/                # Airflow DAG files
-│   ├── airflow_job.py   # Airflow job script
-│
-├── snowflake/           # Snowflake-related scripts
-│   ├── snowflake_commands.sql  # SQL commands to set up Snowflake
-│
-├── src/                 # Python scripts
-│   ├── fetch_news.py    # Script to fetch news data
-│
-├── requirements.txt     # Python dependencies
-├── README.md            # Project documentation
-
----
