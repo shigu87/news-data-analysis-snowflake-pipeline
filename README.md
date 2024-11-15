@@ -100,6 +100,3 @@ In the real world, this solution can be applied to a variety of use cases:
 
 ---
 
-## **License**
-MIT License
-
